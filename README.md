@@ -4,13 +4,13 @@ Gandib Dhari Roy is a Full Stack Web Developer.
 
 ## Technologies Used
 
-- [Next.js 15]
-- [NextUI v2]
-- [Tailwind CSS]
-- [Tailwind Variants]
-- [TypeScript]
-- [Framer Motion]
-- [next-themes]
+- Next.js 15
+- NextUI v2
+- Tailwind CSS
+- Tailwind Variants
+- TypeScript
+- Framer Motion
+- next-themes
 
 ## How to Use
 
