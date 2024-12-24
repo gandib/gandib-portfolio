@@ -2,8 +2,22 @@
 import { Button } from "@nextui-org/react";
 import gandib from "@/src/assets/gandib.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Designation = () => {
+  // Google Drive file ID
+  const fileId = "1mdN3b_HEGITf0wHHygkpCBMbMfQ1UCKe";
+  const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = downloadUrl; // Use the new download URL
+    link.download = "Gandib_Dhari_Roy_CV.pdf"; // You can set a custom filename for the downloaded CV
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="grid lg:grid-cols-2 border-b-1">
       <div className="mt-16">
@@ -19,10 +33,18 @@ const Designation = () => {
           MongoDB and MySQL.
         </p>
         <div className="my-12">
-          <Button className="bg-primary-400 text-white xs:text-xl xs:p-8">
-            View CV
-          </Button>
-          <Button className="bg-white ml-6 xs:text-xl text-gray-600 font-bold xs:p-8">
+          <Link
+            href={`https://drive.google.com/file/d/${fileId}/view`}
+            target="_blank"
+          >
+            <Button className="bg-primary-400 text-white xs:text-xl xs:p-8">
+              View CV
+            </Button>
+          </Link>
+          <Button
+            onPress={handleDownloadCV}
+            className="bg-white ml-6 xs:text-xl text-gray-600 font-bold xs:p-8"
+          >
             Download CV
           </Button>
         </div>
