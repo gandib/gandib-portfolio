@@ -13,10 +13,10 @@ const Designation = () => {
         <h2 className="my-12 text-xl xs:text-3xl sm:text-4xl font-bold">
           Full Stack Web Developer
         </h2>
-        <p className="text-gray-700 text-lg">
+        <p className="text-gray-500 text-lg">
           I am a passionate Full Stack Web Developer with expertise in both
-          front-end and back-end technologies like REACT, NEXTJS, and MongoDB
-          and MySQL.
+          front-end and back-end technologies like REACT, NEXTJS as well as
+          MongoDB and MySQL.
         </p>
         <div className="my-12">
           <Button className="bg-primary-400 text-white xs:text-xl xs:p-8">
