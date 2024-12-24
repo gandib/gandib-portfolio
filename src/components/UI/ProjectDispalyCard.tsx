@@ -26,9 +26,14 @@ const ProjectDispalyCard = () => {
             Frontend Radio beyond this is very nice project i can show
             everywhere
           </p>
-          <button className="flex border-2 border-black py-3 px-6 mt-8 hover:bg-black hover:text-white">
-            View Project <ArrowUpRight className="ml-2" />
-          </button>
+          <div className="flex">
+            <button className="flex border-2 border-primary-500 text-white bg-primary-500 py-3 px-3 lg:px-6 mt-8 hover:bg-black hover:text-white mr-4 xs:text-sm">
+              Live View <ArrowUpRight className="ml-2" />
+            </button>
+            <button className="flex border-2 border-black py-3 px-3 lg:px-6 mt-8 hover:bg-black hover:text-white xs:text-sm">
+              Project Detail <ArrowUpRight className="ml-2" />
+            </button>
+          </div>
         </div>
       </div>
     </Card>
