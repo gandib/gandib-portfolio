@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Container from "../components/UI/Container";
 
 export default function Error({
   error,
@@ -16,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <Container>
       <h2>Something went wrong!</h2>
       <button
         onClick={
@@ -26,6 +27,6 @@ export default function Error({
       >
         Try again
       </button>
-    </div>
+    </Container>
   );
 }

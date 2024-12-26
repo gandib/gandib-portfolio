@@ -1,7 +1,13 @@
 import { Sparkle } from "lucide-react";
 import BlogDisplayCard from "./BlogDisplayCard";
+import { getAllBlogs } from "@/src/services/BlogService";
+import AllBlogButton from "./AllBlogButton";
 
-const Blog = () => {
+const Blog = async () => {
+  const { data: allBlogs } = await getAllBlogs([
+    { name: "limit", value: 10 },
+    { name: "sort", value: "-createdAt" },
+  ]);
   return (
     <div className="mb-16">
       <div className="flex justify-start">
@@ -15,14 +21,12 @@ const Blog = () => {
       <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-start">
         Some latest blog
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3">
-        <BlogDisplayCard />
+      <div>
+        <BlogDisplayCard blogs={allBlogs} />
       </div>
-      {/* <div className="flex justify-center">
-        <button className="flex border-2 bg-black text-white py-3 px-6 mt-8 hover:bg-white hover:text-black">
-          View All Blogs
-        </button>
-      </div> */}
+      <div className="flex justify-center">
+        <AllBlogButton />
+      </div>
     </div>
   );
 };

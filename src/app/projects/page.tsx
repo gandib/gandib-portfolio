@@ -1,9 +1,15 @@
-import { title } from "@/src/components/primitives";
+import Container from "@/src/components/UI/Container";
+import ProjectPageDispalyCard from "@/src/components/UI/ProjectPageDisplayCard";
+import { getAllProjects } from "@/src/services/ProjectService";
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const { data: allProjects } = await getAllProjects([
+    { name: "limit", value: 10 },
+    { name: "sort", value: "-createdAt" },
+  ]);
   return (
-    <div>
-      <h1 className={title()}>Projects</h1>
-    </div>
+    <Container>
+      <ProjectPageDispalyCard projects={allProjects} />
+    </Container>
   );
 }
