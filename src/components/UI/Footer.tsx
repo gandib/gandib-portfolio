@@ -21,7 +21,7 @@ const Footer = () => {
             <FaTwitter className="text-2xl hover:text-blue-400" />
           </a>
           <a
-            href="https://www.linkedin.com/in/gandib-roy-94a880219/"
+            href="https://www.linkedin.com/in/gandib"
             target="_blank"
             rel="noopener noreferrer"
           >

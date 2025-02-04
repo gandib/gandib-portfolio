@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/react";
 import gandib from "@/src/assets/gandib.png";
 import Image from "next/image";
 import Link from "next/link";
+import * as motion from "framer-motion/client";
 
 const Designation = () => {
   // Google Drive file ID
@@ -20,7 +21,17 @@ const Designation = () => {
 
   return (
     <div className="grid lg:grid-cols-2 border-b-1">
-      <div className="mt-16">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 100,
+        }}
+        className="mt-16"
+      >
         <h1 className="text-yellow-400 text-xl font-bold p-2 bg-yellow-100 inline">
           Hi! I'm Gandib Dhari Roy
         </h1>
@@ -48,10 +59,20 @@ const Designation = () => {
             Download CV
           </Button>
         </div>
-      </div>
-      <div className="mt-1">
+      </motion.div>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 100,
+        }}
+        className="mt-1"
+      >
         <Image src={gandib} alt="Gandib Dhari Roy" />
-      </div>
+      </motion.div>
     </div>
   );
 };

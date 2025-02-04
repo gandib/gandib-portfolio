@@ -61,15 +61,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gray-100">
+    <section id="contact" className="py-16 bg-default-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4 text-gray-900">Contact Me</h2>
-        <p className="text-gray-700 mb-8">
+        <h2 className="text-3xl font-bold mb-4 ">Contact Me</h2>
+        <p className=" mb-8">
           Feel free to reach out for collaborations or just a friendly hello!
         </p>
 
         {/* Contact Details */}
-        <div className="text-gray-600 mb-8">
+        <div className=" mb-8">
           <p className="mb-2">
             📧{" "}
             <a href="mailto:gandibdhariroy@gmail.com" className="underline">
@@ -103,7 +103,9 @@ const Contact = () => {
             >
               ✖
             </button>
-            <h2 className="text-xl font-bold mb-4">Contact Form</h2>
+            <h2 className="text-xl font-bold mb-4 text-default-500">
+              Contact Form
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label

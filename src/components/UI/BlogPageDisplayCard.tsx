@@ -6,6 +6,7 @@ import { format, parseISO } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getAllBlogs } from "@/src/services/BlogService";
+import * as motion from "framer-motion/client";
 
 const BlogPageDisplayCard = ({
   blogs,
@@ -47,45 +48,63 @@ const BlogPageDisplayCard = ({
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 grow relative">
+      <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-start">
+        Blogs
+      </h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 grow relative">
         {blogData &&
           blogData?.result?.length > 0 &&
           blogData?.result?.map((blog: IBlog) => (
-            <Card key={blog._id} className="mt-12">
-              <div className="">
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{
+                duration: 0.2,
+                delay: 0.5,
+                type: "spring",
+                stiffness: 100,
+              }}
+              key={blog._id}
+            >
+              <Card className="mt-12">
                 <div className="">
-                  <Image
-                    alt="Card background"
-                    className="object-cover rounded-xl md:h-[350px]"
-                    src={blog.image[0]}
-                    width={500}
-                  />
-                </div>
-                <div className="md:pt-8 pt-2 p-4">
-                  <p className="text-lg  font-bold text-primary">{blog.tag}</p>
-                  <h4 className="font-semibold text-2xl">{blog.title}</h4>
-                  <p className="text-gray-500 py-2">
-                    {format(parseISO(blog.createdAt), "dd MMM, yyyy")}
-                  </p>
-                  <div className="mt-6 text-lg">
-                    <div
-                      className="instructions"
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          blog.description.slice(0, 150) +
-                          `${blog.description.length > 150 ? "..." : ""}`,
-                      }}
+                  <div className="">
+                    <Image
+                      alt="Card background"
+                      className="object-cover rounded-xl md:h-[350px]"
+                      src={blog.image[0]}
+                      width={500}
                     />
                   </div>
-                  <button
-                    onClick={() => router.push(`/blogs/details/${blog._id}`)}
-                    className=" mt-8 text-primary-500 hover:text-green-500"
-                  >
-                    Read more
-                  </button>
+                  <div className="md:pt-8 pt-2 p-4">
+                    <p className="text-lg  font-bold text-primary">
+                      {blog.tag}
+                    </p>
+                    <h4 className="font-semibold text-2xl">{blog.title}</h4>
+                    <p className="text-gray-500 py-2">
+                      {format(parseISO(blog.createdAt), "dd MMM, yyyy")}
+                    </p>
+                    <div className="mt-6 text-lg">
+                      <div
+                        className="instructions"
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            blog.description.slice(0, 145) +
+                            `${blog.description.length > 145 ? "..." : ""}`,
+                        }}
+                      />
+                    </div>
+                    <button
+                      onClick={() => router.push(`/blogs/details/${blog._id}`)}
+                      className=" mt-8 text-primary-500 hover:text-green-500"
+                    >
+                      Read more
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
       </div>
       {blogData?.result?.length > 0 ? (

@@ -10,7 +10,7 @@ const Blog = async () => {
   ]);
   return (
     <div className="mb-16">
-      <div className="flex justify-start">
+      <div className="flex justify-center">
         <div className="text-xl font-bold bg-primary-500 text-white py-2 px-6 rounded-full inline">
           <p className="flex items-center">
             {" "}
@@ -18,7 +18,7 @@ const Blog = async () => {
           </p>
         </div>
       </div>
-      <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-start">
+      <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-center">
         Some latest blog
       </h1>
       <div>
