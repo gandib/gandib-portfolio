@@ -6,14 +6,13 @@ import Link from "next/link";
 import * as motion from "framer-motion/client";
 
 const Designation = () => {
-  // Google Drive file ID
   const fileId = "1mdN3b_HEGITf0wHHygkpCBMbMfQ1UCKe";
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = downloadUrl; // Use the new download URL
-    link.download = "Gandib_Dhari_Roy_CV.pdf"; // You can set a custom filename for the downloaded CV
+    link.href = downloadUrl;
+    link.download = "Gandib_Dhari_Roy_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -35,7 +34,7 @@ const Designation = () => {
         <h1 className="text-yellow-400 text-xl font-bold p-2 bg-yellow-100 inline">
           Hi! I'm Gandib Dhari Roy
         </h1>
-        <h2 className="my-12 text-xl xs:text-3xl sm:text-4xl font-bold">
+        <h2 className="my-12 xs:text-3xl sm:text-4xl text-gray-500 text-xl font-extrabold ">
           Full Stack Web Developer
         </h2>
         <p className="text-gray-500 text-lg">
@@ -48,7 +47,7 @@ const Designation = () => {
             href={`https://drive.google.com/file/d/${fileId}/view`}
             target="_blank"
           >
-            <Button className="bg-primary-400 text-white xs:text-xl xs:p-8">
+            <Button className="bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white xs:text-xl xs:p-8">
               View CV
             </Button>
           </Link>

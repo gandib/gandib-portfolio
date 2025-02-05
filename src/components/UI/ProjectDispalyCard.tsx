@@ -20,7 +20,7 @@ const ProjectDispalyCard = ({
 }) => {
   const router = useRouter();
   return (
-    <div>
+    <div className="mt-12 grid gap-4 lg:gap-6">
       {projects &&
         projects?.result?.length > 0 &&
         projects?.result?.slice(0, 3).map((project: IProject) => (
@@ -36,7 +36,7 @@ const ProjectDispalyCard = ({
             }}
             key={project._id}
           >
-            <Card className="mt-12">
+            <Card className="">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="">
                   <Image
@@ -59,7 +59,7 @@ const ProjectDispalyCard = ({
                     <Link
                       href={project.clientLiveLink}
                       target="_blank"
-                      className="flex border-2 border-primary-500 text-white bg-primary-500 py-3 px-3 lg:px-6 mt-8 hover:bg-black hover:text-white mr-4 xs:text-sm"
+                      className="flex font-semibold text-white bg-gradient-to-l from-primary-500 to-fuchsia-500 py-3 px-3 lg:px-6 mt-8 hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400  hover:text-white mr-4 xs:text-sm"
                     >
                       Live View <ArrowUpRight className="ml-2" />
                     </Link>

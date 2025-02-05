@@ -51,7 +51,7 @@ const BlogPageDisplayCard = ({
       <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-start">
         Blogs
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 grow relative">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 grow relative mt-12">
         {blogData &&
           blogData?.result?.length > 0 &&
           blogData?.result?.map((blog: IBlog) => (
@@ -67,7 +67,7 @@ const BlogPageDisplayCard = ({
               }}
               key={blog._id}
             >
-              <Card className="mt-12">
+              <Card className="">
                 <div className="">
                   <div className="">
                     <Image
@@ -97,7 +97,7 @@ const BlogPageDisplayCard = ({
                     </div>
                     <button
                       onClick={() => router.push(`/blogs/details/${blog._id}`)}
-                      className=" mt-8 text-primary-500 hover:text-green-500"
+                      className=" mt-8 text-primary-500 hover:text-fuchsia-500"
                     >
                       Read more
                     </button>
@@ -113,7 +113,7 @@ const BlogPageDisplayCard = ({
           page={currentPage}
           showControls
           onChange={(page) => setCurrentPage(page)}
-          className="flex justify-center my-2"
+          className="flex justify-center mb-4 mt-6"
         />
       ) : (
         "No blogs to show!"

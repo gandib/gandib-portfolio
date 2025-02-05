@@ -87,7 +87,7 @@ const Contact = () => {
 
         <button
           onClick={toggleModal}
-          className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition"
+          className="bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white px-6 py-2 rounded-lg hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400 "
         >
           Get In Touch
         </button>
@@ -171,7 +171,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
+                className="w-full bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white  rounded-lg hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400  px-4 py-2"
               >
                 Send Message
               </button>

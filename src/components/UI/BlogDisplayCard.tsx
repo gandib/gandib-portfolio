@@ -13,7 +13,7 @@ const BlogDisplayCard = ({
 }) => {
   const router = useRouter();
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 grow relative">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 grow relative mt-12">
       {blogs &&
         blogs?.result?.length > 0 &&
         blogs?.result?.slice(0, 3).map((blog: IBlog) => (
@@ -29,7 +29,7 @@ const BlogDisplayCard = ({
             }}
             key={blog._id}
           >
-            <Card className="mt-12">
+            <Card className="">
               <div className="">
                 <div className="">
                   <Image
@@ -57,7 +57,7 @@ const BlogDisplayCard = ({
                   </div>
                   <button
                     onClick={() => router.push(`/blogs/details/${blog._id}`)}
-                    className=" mt-8 text-primary-500 hover:text-green-500"
+                    className=" mt-8 text-primary-500 hover:text-fuchsia-500"
                   >
                     Read more
                   </button>
