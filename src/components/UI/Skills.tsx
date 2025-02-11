@@ -25,7 +25,7 @@ const Skills = async () => {
               stiffness: 100,
             }}
             key={skill._id}
-            className="flex flex-col items-center justify-center p-4  rounded-lg shadow-md hover:bg-primary-300 transition duration-300"
+            className="flex flex-col items-center justify-center p-4  rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
           >
             <Image
               src={skill.logo}

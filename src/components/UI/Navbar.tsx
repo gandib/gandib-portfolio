@@ -30,7 +30,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <p className="font-bold text-lg  bg-gradient-to-l from-primary-500 to-fuchsia-500 bg-clip-text text-transparent">
+            <p className="font-bold text-lg  bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] bg-clip-text text-transparent">
               GANDIB DHARI ROY
             </p>
           </NextLink>
@@ -54,7 +54,7 @@ export const Navbar = () => {
         {siteConfig.navMenuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={pathname === item.href ? "primary" : "foreground"}
+              color={pathname === item.href ? "warning" : "foreground"}
               href={item.href}
               size="lg"
               className="font-bold"

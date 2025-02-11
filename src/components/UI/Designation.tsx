@@ -47,7 +47,7 @@ const Designation = () => {
             href={`https://drive.google.com/file/d/${fileId}/view`}
             target="_blank"
           >
-            <Button className="bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white xs:text-xl xs:p-8">
+            <Button className="bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] text-white xs:text-xl xs:p-8">
               View CV
             </Button>
           </Link>

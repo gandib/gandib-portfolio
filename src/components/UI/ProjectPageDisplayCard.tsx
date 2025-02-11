@@ -91,7 +91,7 @@ const ProjectPageDispalyCard = ({
                     />
                   </div>
                   <div className="md:pt-8 pt-2 p-4">
-                    <p className="text-lg font-bold text-yellow-400">
+                    <p className="text-lg font-bold text-[#ce8d86]">
                       {project.tag}
                     </p>
                     <h4 className="font-semibold text-2xl">{project.title}</h4>
@@ -103,7 +103,7 @@ const ProjectPageDispalyCard = ({
                       <Link
                         href={project.clientLiveLink}
                         target="_blank"
-                        className="flex font-semibold text-white bg-gradient-to-l from-primary-500 to-fuchsia-500 py-3 px-3 lg:px-6 mt-8 hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400  hover:text-white mr-4 xs:text-sm"
+                        className="flex font-semibold text-white bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] py-3 px-3 lg:px-6 mt-8 hover:bg-gradient-to-r hover:from-[#9f7672] hover:to-[#e3ce65]  hover:text-white mr-4 xs:text-sm"
                       >
                         Live View <ArrowUpRight className="ml-2" />
                       </Link>
@@ -127,6 +127,7 @@ const ProjectPageDispalyCard = ({
           total={totalPage}
           page={currentPage}
           showControls
+          color="warning"
           onChange={(page) => setCurrentPage(page)}
           className="flex justify-center my-4"
         />

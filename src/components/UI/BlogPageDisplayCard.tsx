@@ -78,7 +78,7 @@ const BlogPageDisplayCard = ({
                     />
                   </div>
                   <div className="md:pt-8 pt-2 p-4">
-                    <p className="text-lg  font-bold text-primary">
+                    <p className="text-lg  font-bold text-[#ce8d86]">
                       {blog.tag}
                     </p>
                     <h4 className="font-semibold text-2xl">{blog.title}</h4>
@@ -97,7 +97,7 @@ const BlogPageDisplayCard = ({
                     </div>
                     <button
                       onClick={() => router.push(`/blogs/details/${blog._id}`)}
-                      className=" mt-8 text-primary-500 hover:text-fuchsia-500"
+                      className=" mt-8 text-yellow-500 hover:text-yellow-400"
                     >
                       Read more
                     </button>
@@ -112,6 +112,7 @@ const BlogPageDisplayCard = ({
           total={totalPage}
           page={currentPage}
           showControls
+          color="warning"
           onChange={(page) => setCurrentPage(page)}
           className="flex justify-center mb-4 mt-6"
         />

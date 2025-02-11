@@ -20,10 +20,10 @@ const BlogDetailCard = ({ blog }: { blog: IBlog }) => {
           isFooterBlurred
           className=" hover:shadow-2xl pb-4"
         >
-          <CardHeader className=" ">
+          <CardHeader className=" flex justify-center">
             {blog?.image && (
               <Image
-                width={1000}
+                width={1500}
                 height={500}
                 src={blog?.image[0]}
                 alt="Product image"
@@ -33,7 +33,7 @@ const BlogDetailCard = ({ blog }: { blog: IBlog }) => {
 
           <CardBody>
             <div className=" w-full">
-              <h4 className="mt-1 rounded  p-1 text-lg sm:text-xl md:text-xl font-medium text-purple-500">
+              <h4 className="mt-1 rounded  p-1 text-lg sm:text-xl md:text-xl font-bold text-[#ce8d86]">
                 {blog.tag}
               </h4>
               <h4 className="mt-1 rounded  p-1 text-xl  md:text-xl font-semibold ">

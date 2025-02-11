@@ -87,7 +87,7 @@ const Contact = () => {
 
         <button
           onClick={toggleModal}
-          className="bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white px-6 py-2 rounded-lg hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400 "
+          className="bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] text-white px-6 py-2 rounded-lg hover:bg-gradient-to-r hover:from-[#9f7672] hover:to-[#e3ce65]  hover:text-white"
         >
           Get In Touch
         </button>
@@ -171,7 +171,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-l from-primary-500 to-fuchsia-500 text-white  rounded-lg hover:bg-gradient-to-l hover:from-primary-400 hover:to-fuchsia-400  px-4 py-2"
+                className="w-full bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] text-white  rounded-lg hover:bg-gradient-to-r hover:from-[#9f7672] hover:to-[#e3ce65]  hover:text-white  px-4 py-2"
               >
                 Send Message
               </button>

@@ -24,7 +24,7 @@ const ProjectDetailCard = ({ project }: { project: IProject }) => {
           <CardHeader className=" ">
             {project?.image && (
               <Image
-                width={1000}
+                width={1500}
                 height={500}
                 src={project?.image[0]}
                 alt="Product image"
@@ -34,7 +34,7 @@ const ProjectDetailCard = ({ project }: { project: IProject }) => {
 
           <CardBody>
             <div className=" w-full">
-              <h4 className="mt-1 rounded  p-1 text-lg sm:text-xl md:text-xl font-medium text-purple-500">
+              <h4 className="mt-1 rounded  p-1 text-lg sm:text-xl md:text-xl font-bold text-[#ce8d86]">
                 {project.tag}
               </h4>
               {project?.clientLiveLink && (
