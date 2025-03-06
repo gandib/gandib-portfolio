@@ -1,4 +1,5 @@
 "use client";
+import { useContactMe } from "@/src/hooks/auth.hook";
 import { useState } from "react";
 
 const Contact = () => {
@@ -13,6 +14,9 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  console.log(formData);
+
+  const { mutate: handleContactMe, isSuccess } = useContactMe();
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -50,7 +54,10 @@ const Contact = () => {
     e.preventDefault();
     if (validate()) {
       // Handle form submission (e.g., send to API)
-      alert("Message sent successfully!");
+      console.log(formData);
+      handleContactMe(formData);
+      // alert("Message sent successfully!");
+
       toggleModal();
     }
   };
