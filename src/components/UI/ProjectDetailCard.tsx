@@ -37,54 +37,52 @@ const ProjectDetailCard = ({ project }: { project: IProject }) => {
               <h4 className="mt-1 rounded  p-1 text-lg sm:text-xl md:text-xl font-bold text-[#ce8d86]">
                 {project.tag}
               </h4>
-              {project?.clientLiveLink && (
-                <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
-                  Client Live Link:{" "}
-                  <Link
-                    href={project?.clientLiveLink}
-                    target="_blank"
-                    className="text-green-500"
-                  >
-                    {project?.clientLiveLink}
-                  </Link>
-                </p>
-              )}
-              {project?.serverLiveLink && (
-                <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
-                  Server Live Link:{" "}
-                  <Link
-                    href={project?.serverLiveLink}
-                    target="_blank"
-                    className="text-green-500"
-                  >
-                    {project?.serverLiveLink}
-                  </Link>
-                </p>
-              )}
-              {project?.gitClientLink && (
-                <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
-                  Git Client Live Link:{" "}
-                  <Link
-                    href={project?.gitClientLink}
-                    target="_blank"
-                    className="text-green-500"
-                  >
-                    {project?.gitClientLink}
-                  </Link>
-                </p>
-              )}
-              {project?.gitServerLink && (
-                <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
-                  Git Server Live Link:{" "}
-                  <Link
-                    href={project?.gitServerLink}
-                    target="_blank"
-                    className="text-green-500"
-                  >
-                    {project?.gitServerLink}
-                  </Link>
-                </p>
-              )}
+              <div className="flex">
+                {project?.clientLiveLink && (
+                  <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
+                    <Link
+                      href={project?.clientLiveLink}
+                      target="_blank"
+                      className="text-green-500"
+                    >
+                      Client
+                    </Link>
+                  </p>
+                )}
+                {project?.serverLiveLink && (
+                  <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
+                    <Link
+                      href={project?.serverLiveLink}
+                      target="_blank"
+                      className="text-green-500"
+                    >
+                      | Server
+                    </Link>
+                  </p>
+                )}
+                {project?.gitClientLink && (
+                  <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
+                    <Link
+                      href={project?.gitClientLink}
+                      target="_blank"
+                      className="text-green-500"
+                    >
+                      | GitHub Client
+                    </Link>
+                  </p>
+                )}
+                {project?.gitServerLink && (
+                  <p className="mt-1 rounded  p-1 text-lg  md:text-lg font-semibold ">
+                    <Link
+                      href={project?.gitServerLink}
+                      target="_blank"
+                      className="text-green-500"
+                    >
+                      | GitHub Server
+                    </Link>
+                  </p>
+                )}
+              </div>
               <h4 className="mt-1 rounded  p-1 text-xl  md:text-xl font-semibold ">
                 {project?.title}
               </h4>

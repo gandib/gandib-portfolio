@@ -1,5 +1,11 @@
 "use client";
-import { Card, Image, Pagination } from "@nextui-org/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Image,
+  Pagination,
+} from "@nextui-org/react";
 import { IMeta } from "./ProjectDispalyCard";
 import { IBlog, queryParams } from "@/src/types";
 import { format, parseISO } from "date-fns";
@@ -46,12 +52,18 @@ const BlogPageDisplayCard = ({
     }
   }, [currentPage, totalPage]);
 
+  const parseHTML = (html: string) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const bodyText = doc.body.textContent || "";
+    return bodyText.slice(0, 145) + (bodyText.length > 145 ? "..." : "");
+  };
+
   return (
     <div>
       <h1 className="text-xl sm:text-2xl mt-6 font-semibold flex justify-start">
         Blogs
       </h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 grow relative mt-12">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4  grow relative mt-12">
         {blogData &&
           blogData?.result?.length > 0 &&
           blogData?.result?.map((blog: IBlog) => (
@@ -67,42 +79,50 @@ const BlogPageDisplayCard = ({
               }}
               key={blog._id}
             >
-              <Card className="">
-                <div className="">
-                  <div className="">
+              <Card
+                isFooterBlurred
+                className="rounded-t-none shadow-xl p-2 border-1 border-t-0 rounded-md "
+              >
+                <CardHeader className="h-[200px] p-0 w-full flex justify-center relative">
+                  {blog?.image && (
                     <Image
-                      alt="Card background"
-                      className="object-cover rounded-xl md:h-[350px]"
-                      src={blog.image[0]}
                       width={500}
+                      height={200}
+                      src={blog?.image[0]}
+                      alt="Product image"
+                      className="h-full"
                     />
-                  </div>
-                  <div className="md:pt-8 pt-2 p-4">
-                    <p className="text-lg  font-bold text-[#ce8d86]">
+                  )}
+                </CardHeader>
+
+                <CardBody className="w-full">
+                  <div className="md:pt-0 pt-2 p-1">
+                    <p className="text-sm  font-bold text-[#ce8d86]">
                       {blog.tag}
                     </p>
-                    <h4 className="font-semibold text-2xl">{blog.title}</h4>
-                    <p className="text-gray-500 py-2">
+                    <h4 className="font-semibold text-lg">
+                      {blog.title.slice(0, 45) +
+                        `${blog.title.length > 45 ? "..." : ""}`}
+                    </h4>
+                    <p className="text-gray-500 py-0 text-xs">
                       {format(parseISO(blog.createdAt), "dd MMM, yyyy")}
                     </p>
-                    <div className="mt-6 text-lg">
+                    <div className="mt-2 text-base text-justify">
                       <div
                         className="instructions"
                         dangerouslySetInnerHTML={{
-                          __html:
-                            blog.description.slice(0, 145) +
-                            `${blog.description.length > 145 ? "..." : ""}`,
+                          __html: parseHTML(blog.description),
                         }}
                       />
                     </div>
                     <button
                       onClick={() => router.push(`/blogs/details/${blog._id}`)}
-                      className=" mt-8 text-yellow-500 hover:text-yellow-400"
+                      className=" mt-2 text-yellow-500 hover:text-yellow-400"
                     >
                       Read more
                     </button>
                   </div>
-                </div>
+                </CardBody>
               </Card>
             </motion.div>
           ))}

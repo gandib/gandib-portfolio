@@ -42,12 +42,12 @@ const Designation = () => {
           front-end and back-end technologies like REACT, NEXTJS as well as
           MongoDB and MySQL.
         </p>
-        <div className="my-12">
+        <div className="my-6">
           <Link
             href={`https://drive.google.com/file/d/${fileId}/view`}
             target="_blank"
           >
-            <Button className="bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] text-white xs:text-xl xs:p-8">
+            <Button className="bg-gradient-to-r from-[#ce8d86] to-[#e9d15f] text-white xs:text-xl xs:p-6">
               View CV
             </Button>
           </Link>
