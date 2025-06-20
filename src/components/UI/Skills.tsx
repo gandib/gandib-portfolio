@@ -34,9 +34,9 @@ const Skills = async () => {
               height={48}
               className="mb-2"
             />
-            {/* <span className="text-lg font-semibold text-yellow-600">
+            <span className="text-lg font-semibold text-yellow-600">
               {skill.name}
-            </span> */}
+            </span>
           </motion.div>
         ))}
       </div>
