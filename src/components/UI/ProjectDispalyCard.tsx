@@ -41,7 +41,7 @@ const ProjectDispalyCard = ({
                 <div className="">
                   <Image
                     alt="Card background"
-                    className="object-cover rounded-xl md:h-[350px]"
+                    className=" rounded-xl md:h-[350px]"
                     src={project.image[0]}
                     width={500}
                   />
