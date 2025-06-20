@@ -6,7 +6,7 @@ import Link from "next/link";
 import * as motion from "framer-motion/client";
 
 const Designation = () => {
-  const fileId = "1mdN3b_HEGITf0wHHygkpCBMbMfQ1UCKe";
+  const fileId = "1mejdChVv2ehW_dxyaZgr-temaXuxmCp_";
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
   const handleDownloadCV = () => {
